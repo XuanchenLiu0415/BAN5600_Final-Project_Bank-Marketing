@@ -1,0 +1,9 @@
+# Import Dataset
+
+from pyspark.sql import SparkSession
+
+# Start a SparkSession
+spark = SparkSession.builder.appName("MyApp").getOrCreate()
+
+# Load data from a CSV file
+Bank = spark.read.csv('/FileStore/tables/BAN5600_Project__dataset-1.csv', header=True, inferSchema=True)
